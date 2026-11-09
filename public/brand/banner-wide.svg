@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">One More Token 品牌横幅</title>
+  <desc id="desc">深色科技感横幅：左侧为组合标识与标语，右侧为彩色 token 分词序列。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f1c"/>
+      <stop offset="1" stop-color="#06070c"/>
+    </linearGradient>
+    <radialGradient id="halo-t" cx="0.5" cy="0" r="0.9">
+      <stop offset="0" stop-color="#6ee7ff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#6ee7ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo-b" cx="0.85" cy="1.1" r="0.9">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="caret" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#7882a0" stroke-opacity="0.07"/>
+    </pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="400" fill="url(#grid)"/>
+  <rect width="1200" height="400" fill="url(#halo-t)"/>
+  <rect width="1200" height="400" fill="url(#halo-b)"/>
+
+  <!-- 左侧标识 -->
+  <g transform="translate(64,128)">
+    <rect width="144" height="144" rx="32" fill="#101425"/>
+    <rect width="144" height="144" rx="32" fill="none" stroke="#6ee7ff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <g transform="scale(1.125)" filter="url(#glow)">
+      <rect x="22" y="54" width="18" height="26" rx="5" fill="#7dd3fc"/>
+      <rect x="46" y="46" width="22" height="34" rx="5" fill="#a78bfa"/>
+      <rect x="74" y="56" width="18" height="24" rx="5" fill="#f472b6"/>
+      <rect x="98" y="48" width="7" height="32" rx="2.5" fill="url(#caret)"/>
+    </g>
+  </g>
+
+  <g font-family="'SFMono-Regular','JetBrains Mono',Consolas,'Liberation Mono',Menlo,monospace">
+    <text x="244" y="196" font-size="46" font-weight="700" letter-spacing="2" fill="url(#brand)">ONE MORE TOKEN</text>
+    <text x="246" y="238" font-size="22" letter-spacing="11" fill="#8f95ab" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">一词未尽 · 继续生成</text>
+  </g>
+
+  <!-- 右侧 token 分词序列 -->
+  <g transform="translate(820,168)" font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace">
+    <g transform="translate(0,0)">
+      <rect width="58" height="40" rx="7" fill="#7dd3fc" fill-opacity="0.1" stroke="#7dd3fc" stroke-opacity="0.45"/>
+      <text x="29" y="26" text-anchor="middle" font-size="15" fill="#7dd3fc">one</text>
+    </g>
+    <g transform="translate(66,0)">
+      <rect width="58" height="40" rx="7" fill="#a78bfa" fill-opacity="0.1" stroke="#a78bfa" stroke-opacity="0.45"/>
+      <text x="29" y="26" text-anchor="middle" font-size="15" fill="#a78bfa">more</text>
+    </g>
+    <g transform="translate(132,0)">
+      <rect width="66" height="40" rx="7" fill="#f472b6" fill-opacity="0.1" stroke="#f472b6" stroke-opacity="0.45"/>
+      <text x="33" y="26" text-anchor="middle" font-size="15" fill="#f472b6">token</text>
+    </g>
+    <g transform="translate(206,0)">
+      <rect width="46" height="40" rx="7" fill="#4ade80" fill-opacity="0.1" stroke="#4ade80" stroke-opacity="0.45"/>
+      <text x="23" y="26" text-anchor="middle" font-size="15" fill="#4ade80">+1</text>
+    </g>
+    <rect x="262" y="2" width="7" height="36" rx="3" fill="url(#caret)" filter="url(#glow)"/>
+  </g>
+
+  <!-- 底部标语 -->
+  <text x="64" y="330" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="20" letter-spacing="3" fill="#c9cede">一个由朋友发起、向所有创造者开放的 AI 开源社区</text>
+</svg>

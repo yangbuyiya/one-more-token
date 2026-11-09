@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">One More Token 社交分享卡片</title>
+  <desc id="desc">标准 OG 尺寸分享卡片：图标、中英文标识、标语、token 序列与社区网址。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f1c"/>
+      <stop offset="1" stop-color="#06070c"/>
+    </linearGradient>
+    <radialGradient id="halo-t" cx="0.5" cy="0" r="0.9">
+      <stop offset="0" stop-color="#6ee7ff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#6ee7ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo-b" cx="0.5" cy="1.15" r="0.9">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="caret" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#7882a0" stroke-opacity="0.07"/>
+    </pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#halo-t)"/>
+  <rect width="1200" height="630" fill="url(#halo-b)"/>
+
+  <!-- 居中图标 -->
+  <g transform="translate(528,96)">
+    <rect width="144" height="144" rx="32" fill="#101425"/>
+    <rect width="144" height="144" rx="32" fill="none" stroke="#6ee7ff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <g transform="scale(1.125)" filter="url(#glow)">
+      <rect x="22" y="54" width="18" height="26" rx="5" fill="#7dd3fc"/>
+      <rect x="46" y="46" width="22" height="34" rx="5" fill="#a78bfa"/>
+      <rect x="74" y="56" width="18" height="24" rx="5" fill="#f472b6"/>
+      <rect x="98" y="48" width="7" height="32" rx="2.5" fill="url(#caret)"/>
+    </g>
+  </g>
+
+  <g text-anchor="middle" font-family="'SFMono-Regular','JetBrains Mono',Consolas,'Liberation Mono',Menlo,monospace">
+    <text x="600" y="330" font-size="64" font-weight="700" letter-spacing="4" fill="url(#brand)">ONE MORE TOKEN</text>
+    <text x="600" y="392" font-size="26" letter-spacing="14" fill="#c9cede" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">一词未尽 · 继续生成</text>
+  </g>
+
+  <!-- 中部 token 序列 -->
+  <g transform="translate(352,452)" font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace">
+    <g><rect width="70" height="44" rx="8" fill="#7dd3fc" fill-opacity="0.1" stroke="#7dd3fc" stroke-opacity="0.45"/><text x="35" y="29" text-anchor="middle" font-size="16" fill="#7dd3fc">one</text></g>
+    <g transform="translate(80,0)"><rect width="70" height="44" rx="8" fill="#a78bfa" fill-opacity="0.1" stroke="#a78bfa" stroke-opacity="0.45"/><text x="35" y="29" text-anchor="middle" font-size="16" fill="#a78bfa">more</text></g>
+    <g transform="translate(160,0)"><rect width="78" height="44" rx="8" fill="#f472b6" fill-opacity="0.1" stroke="#f472b6" stroke-opacity="0.45"/><text x="39" y="29" text-anchor="middle" font-size="16" fill="#f472b6">token</text></g>
+    <g transform="translate(248,0)"><rect width="56" height="44" rx="8" fill="#4ade80" fill-opacity="0.1" stroke="#4ade80" stroke-opacity="0.45"/><text x="28" y="29" text-anchor="middle" font-size="16" fill="#4ade80">+1</text></g>
+    <rect x="316" y="2" width="7" height="40" rx="3" fill="url(#caret)" filter="url(#glow)"/>
+  </g>
+
+  <text x="600" y="568" text-anchor="middle" font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace" font-size="20" letter-spacing="3" fill="#6ee7ff">ztword.github.io/one-more-token</text>
+</svg>

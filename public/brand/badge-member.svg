@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="title desc">
+  <title id="title">One More Token 社区成员徽章</title>
+  <desc id="desc">胶囊形徽章：左侧迷你图标，右侧 MEMBER · ONE MORE TOKEN 字样。</desc>
+  <defs>
+    <linearGradient id="caret" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="2" y="2" width="416" height="116" rx="58" fill="#0b0f1c" stroke="url(#badge)" stroke-width="2"/>
+  <rect x="10" y="10" width="396" height="100" rx="50" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+
+  <!-- 迷你 icon -->
+  <g transform="translate(22,30) scale(0.47)">
+    <rect width="128" height="128" rx="30" fill="#101425" stroke="#6ee7ff" stroke-opacity="0.3" stroke-width="3"/>
+    <g filter="url(#glow)">
+      <rect x="22" y="54" width="18" height="26" rx="5" fill="#7dd3fc"/>
+      <rect x="46" y="46" width="22" height="34" rx="5" fill="#a78bfa"/>
+      <rect x="74" y="56" width="18" height="24" rx="5" fill="#f472b6"/>
+      <rect x="98" y="48" width="7" height="32" rx="2.5" fill="url(#caret)"/>
+    </g>
+  </g>
+
+  <g font-family="'SFMono-Regular','JetBrains Mono',Consolas,'Liberation Mono',Menlo,monospace">
+    <text x="94" y="56" font-size="19" font-weight="700" letter-spacing="2" fill="url(#badge)">MEMBER · ONE MORE TOKEN</text>
+    <text x="94" y="86" font-size="14" letter-spacing="6" fill="#8f95ab" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">一词未尽 社区成员</text>
+  </g>
+</svg>

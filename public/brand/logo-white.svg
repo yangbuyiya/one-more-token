@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 128" role="img" aria-labelledby="title desc">
+  <title id="title">One More Token 单色白标识</title>
+  <desc id="desc">纯白色版本，适合放置于任意深色或品牌底之上，以及单色印刷场景。</desc>
+
+  <!-- icon -->
+  <g>
+    <rect width="128" height="128" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+    <rect x="22" y="54" width="18" height="26" rx="5" fill="#ffffff"/>
+    <rect x="46" y="46" width="22" height="34" rx="5" fill="#ffffff"/>
+    <rect x="74" y="56" width="18" height="24" rx="5" fill="#ffffff"/>
+    <rect x="98" y="48" width="7" height="32" rx="2.5" fill="#ffffff"/>
+  </g>
+
+  <!-- wordmark -->
+  <g font-family="'SFMono-Regular','JetBrains Mono',Consolas,'Liberation Mono',Menlo,monospace">
+    <text x="152" y="60" font-size="34" font-weight="700" letter-spacing="1.5" fill="#ffffff">ONE MORE TOKEN</text>
+    <text x="154" y="96" font-size="18" letter-spacing="9" fill="#ffffff" fill-opacity="0.75" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">一词未尽 · 继续生成</text>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">One More Token 品牌色板</title>
+  <desc id="desc">深色背景上展示主背景色、文字色、强调色与六个 token 语义色，附色值与用途。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f1c"/>
+      <stop offset="1" stop-color="#06070c"/>
+    </linearGradient>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#7882a0" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <rect width="1200" height="640" fill="url(#grid)"/>
+
+  <text x="64" y="88" font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace" font-size="34" font-weight="700" letter-spacing="2" fill="#eaecf4">BRAND PALETTE</text>
+  <text x="64" y="126" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" letter-spacing="4" fill="#8f95ab">One More Token · 一词未尽 — 品牌用色规范</text>
+
+  <!-- 基础色 -->
+  <g font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace">
+    <g transform="translate(64,180)">
+      <rect width="250" height="130" rx="12" fill="#06070c" stroke="#2c3245"/>
+      <text x="20" y="104" font-size="16" fill="#eaecf4">#06070C</text>
+      <text x="20" y="40" font-size="13" fill="#8f95ab">BG / 主背景</text>
+    </g>
+    <g transform="translate(334,180)">
+      <rect width="250" height="130" rx="12" fill="#eaecf4"/>
+      <text x="20" y="104" font-size="16" fill="#06070c">#EAECF4</text>
+      <text x="20" y="40" font-size="13" fill="#8f95ab">TEXT / 主文字</text>
+    </g>
+    <g transform="translate(604,180)">
+      <rect width="250" height="130" rx="12" fill="#6ee7ff"/>
+      <text x="20" y="104" font-size="16" fill="#06070c">#6EE7FF</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">ACCENT / 强调</text>
+    </g>
+    <g transform="translate(874,180)">
+      <rect width="250" height="130" rx="12" fill="#8f95ab"/>
+      <text x="20" y="104" font-size="16" fill="#06070c">#8F95AB</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">DIM / 次要文字</text>
+    </g>
+  </g>
+
+  <text x="64" y="382" font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace" font-size="15" letter-spacing="3" fill="#6ee7ff">TOKEN COLORS · 分词语义色</text>
+
+  <!-- token 六色 -->
+  <g font-family="'SFMono-Regular','JetBrains Mono',Consolas,monospace">
+    <g transform="translate(64,412)">
+      <rect width="170" height="150" rx="12" fill="#7dd3fc"/>
+      <text x="20" y="128" font-size="15" fill="#06070c">#7DD3FC</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">TOKEN 01</text>
+    </g>
+    <g transform="translate(254,412)">
+      <rect width="170" height="150" rx="12" fill="#a78bfa"/>
+      <text x="20" y="128" font-size="15" fill="#06070c">#A78BFA</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">TOKEN 02</text>
+    </g>
+    <g transform="translate(444,412)">
+      <rect width="170" height="150" rx="12" fill="#f472b6"/>
+      <text x="20" y="128" font-size="15" fill="#06070c">#F472B6</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">TOKEN 03</text>
+    </g>
+    <g transform="translate(634,412)">
+      <rect width="170" height="150" rx="12" fill="#4ade80"/>
+      <text x="20" y="128" font-size="15" fill="#06070c">#4ADE80</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">TOKEN 04 · 光标</text>
+    </g>
+    <g transform="translate(824,412)">
+      <rect width="170" height="150" rx="12" fill="#fbbf24"/>
+      <text x="20" y="128" font-size="15" fill="#06070c">#FBBF24</text>
+      <text x="20" y="40" font-size="13" fill="#06070c">TOKEN 05</text>
+    </g>
+    <g transform="translate(1014,412)">
+      <rect width="122" height="150" rx="12" fill="#fb7185"/>
+      <text x="18" y="128" font-size="14" fill="#06070c">#FB7185</text>
+      <text x="18" y="40" font-size="12" fill="#06070c">TOKEN 06</text>
+    </g>
+  </g>
+</svg>
