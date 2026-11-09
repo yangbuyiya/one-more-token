@@ -1,10 +1,12 @@
 ---
 import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/#top" aria-label="One More Token 首页">
+    <a class="brand" href={`${base}#top`} aria-label="One More Token 首页">
       <span class="brand-mark" aria-hidden="true">+1</span>
       <span class="brand-type">
         <strong>{site.nameEn}</strong>
@@ -13,9 +15,9 @@ import { site } from '../data/site';
     </a>
 
     <nav class="navigation" aria-label="主导航">
-      <a href="/#manifesto">理念</a>
-      <a href="/#members">成员</a>
-      <a href="/join/">参与</a>
+      <a href={`${base}#manifesto`}>理念</a>
+      <a href={`${base}#members`}>成员</a>
+      <a href={`${base}join/`}>参与</a>
     </nav>
 
     <a class="repository" href={site.githubUrl} target="_blank" rel="noreferrer">

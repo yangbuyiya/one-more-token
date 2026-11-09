@@ -8,6 +8,7 @@ interface Props {
 
 const { member, index } = Astro.props;
 const number = String(index + 1).padStart(3, '0');
+const base = import.meta.env.BASE_URL;
 ---
 
 <article class="member-card">
@@ -19,7 +20,7 @@ const number = String(index + 1).padStart(3, '0');
   <div class="member-content">
     <p class="member-role">{member.data.role}</p>
     <h3>
-      <a href={`/members/${member.id}/`}>{member.data.name}</a>
+      <a href={`${base}members/${member.id}/`}>{member.data.name}</a>
     </h3>
     <p class="member-bio">{member.data.bio}</p>
   </div>

@@ -17,12 +17,13 @@ interface Props {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={`${member.data.name}｜成员`} description={member.data.bio}>
   <article class="profile">
     <div class="container">
-      <a class="back-link" href="/#members"><span aria-hidden="true">←</span> 返回成员列表</a>
+      <a class="back-link" href={`${base}#members`}><span aria-hidden="true">←</span> 返回成员列表</a>
 
       <header class="profile-hero">
         <div class="profile-monogram" aria-hidden="true">{member.data.monogram}</div>

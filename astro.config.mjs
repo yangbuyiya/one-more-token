@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  site: 'https://ztword.github.io',
+  base: '/one-more-token/',
   output: 'static',
   build: {
     format: 'directory',
