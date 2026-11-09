@@ -1,0 +1,255 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const members = await getCollection('members', ({ data }) => !data.draft);
+  return members.map((member) => ({
+    params: { slug: member.id },
+    props: { member },
+  }));
+}
+
+interface Props {
+  member: CollectionEntry<'members'>;
+}
+
+const { member } = Astro.props;
+const { Content } = await render(member);
+---
+
+<BaseLayout title={`${member.data.name}｜成员`} description={member.data.bio}>
+  <article class="profile">
+    <div class="container">
+      <a class="back-link" href="/#members"><span aria-hidden="true">←</span> 返回成员列表</a>
+
+      <header class="profile-hero">
+        <div class="profile-monogram" aria-hidden="true">{member.data.monogram}</div>
+        <div class="profile-heading">
+          <span class="eyebrow">Community member</span>
+          <h1>{member.data.name}</h1>
+          <p class="profile-role">{member.data.role}</p>
+          <p class="profile-bio">{member.data.bio}</p>
+          {member.data.location && <p class="profile-location">BASED IN / {member.data.location}</p>}
+        </div>
+      </header>
+
+      <div class="profile-meta">
+        <ul class="profile-tags" aria-label="关注方向">
+          {member.data.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+        {member.data.links.length > 0 && (
+          <ul class="profile-links" aria-label="相关链接">
+            {member.data.links.map((link) => (
+              <li><a href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a></li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div class="profile-layout">
+        <aside class="content-note">
+          <span>INDEPENDENTLY MAINTAINED</span>
+          <p>这份介绍由成员独立维护。</p>
+          <code>{site.memberContentPath}{member.id}.md</code>
+        </aside>
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .profile {
+    padding-top: 48px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 64px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+  }
+
+  .back-link:hover {
+    color: var(--accent-dark);
+  }
+
+  .profile-hero {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+    gap: clamp(32px, 6vw, 80px);
+  }
+
+  .profile-monogram {
+    display: grid;
+    width: 220px;
+    height: 220px;
+    place-items: center;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: var(--card);
+    font-family: var(--mono);
+    font-size: 3.2rem;
+    font-weight: 750;
+    letter-spacing: -0.07em;
+  }
+
+  .profile-heading {
+    max-width: 760px;
+  }
+
+  h1 {
+    margin-bottom: 12px;
+    font-size: clamp(3.4rem, 7vw, 6.8rem);
+    font-weight: 630;
+    letter-spacing: -0.07em;
+    line-height: 1;
+  }
+
+  .profile-role {
+    margin-bottom: 26px;
+    color: var(--accent-dark);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+
+  .profile-bio {
+    max-width: 700px;
+    margin-bottom: 24px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .profile-location {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+  }
+
+  .profile-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 56px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .profile-tags,
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .profile-tags li {
+    padding: 5px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+  }
+
+  .profile-links {
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+  }
+
+  .profile-links a:hover {
+    color: var(--accent-dark);
+  }
+
+  .profile-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 680px);
+    justify-content: space-between;
+    gap: 64px;
+    margin-top: 72px;
+  }
+
+  .content-note {
+    align-self: start;
+    padding-top: 4px;
+  }
+
+  .content-note > span {
+    color: var(--accent-dark);
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+  }
+
+  .content-note p {
+    margin: 12px 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .content-note code {
+    overflow-wrap: anywhere;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+  }
+
+  @media (max-width: 800px) {
+    .profile-hero {
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
+    }
+
+    .profile-monogram {
+      width: 120px;
+      height: 120px;
+      font-size: 1.8rem;
+    }
+
+    .profile-layout {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-top: 56px;
+    }
+
+    .content-note {
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .back-link {
+      margin-bottom: 40px;
+    }
+
+    .profile-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-monogram {
+      width: 96px;
+      height: 96px;
+    }
+
+    .profile-meta {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="页面未找到">
+  <section class="not-found container">
+    <span class="eyebrow">404 / Token not found</span>
+    <h1>这个 Token，<br /><span>还没有生成。</span></h1>
+    <p>你访问的页面不存在，或者已经移动。回到首页，继续下一个可能。</p>
+    <a class="button button-dark" href="/">返回首页 <span aria-hidden="true">→</span></a>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 65vh;
+    padding-top: 96px;
+  }
+
+  h1 {
+    margin-bottom: 28px;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    letter-spacing: -0.07em;
+    line-height: 1.04;
+  }
+
+  h1 span {
+    color: var(--accent);
+  }
+
+  .not-found > p {
+    max-width: 480px;
+    margin-bottom: 32px;
+    color: var(--muted);
+  }
+</style>

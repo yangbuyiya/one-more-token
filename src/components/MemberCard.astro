@@ -1,0 +1,158 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  index: number;
+}
+
+const { member, index } = Astro.props;
+const number = String(index + 1).padStart(3, '0');
+---
+
+<article class="member-card">
+  <div class="card-topline">
+    <span class="member-number">MEMBER / {number}</span>
+    <span class="card-arrow" aria-hidden="true">↗</span>
+  </div>
+  <div class="monogram" aria-hidden="true">{member.data.monogram}</div>
+  <div class="member-content">
+    <p class="member-role">{member.data.role}</p>
+    <h3>
+      <a href={`/members/${member.id}/`}>{member.data.name}</a>
+    </h3>
+    <p class="member-bio">{member.data.bio}</p>
+  </div>
+  <div class="card-footer">
+    <ul class="tags" aria-label="关注方向">
+      {member.data.tags.slice(0, 3).map((tag) => <li>{tag}</li>)}
+    </ul>
+    <span class="profile-label">PROFILE</span>
+  </div>
+</article>
+
+<style>
+  .member-card {
+    position: relative;
+    display: flex;
+    min-height: 420px;
+    flex-direction: column;
+    padding: 24px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--card);
+    transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .member-card::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    content: "";
+    transition: width 220ms ease;
+  }
+
+  .member-card:hover {
+    transform: translateY(-4px);
+    border-color: #9c9b93;
+    box-shadow: 0 16px 40px rgb(25 26 23 / 7%);
+  }
+
+  .member-card:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+
+  .card-topline,
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .member-number,
+  .profile-label {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+
+  .card-arrow {
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+
+  .monogram {
+    display: grid;
+    width: 84px;
+    height: 84px;
+    margin: 40px 0 32px;
+    place-items: center;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    font-weight: 750;
+    letter-spacing: -0.06em;
+  }
+
+  .member-role {
+    margin-bottom: 8px;
+    color: var(--accent-dark);
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    line-height: 1.5;
+  }
+
+  h3 {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+  }
+
+  h3 a::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
+  .member-bio {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tags li {
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+  }
+</style>
