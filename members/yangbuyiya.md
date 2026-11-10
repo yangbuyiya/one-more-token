@@ -5,7 +5,7 @@ monogram: 不易
 role: 全栈工程师 · Java / AI 应用开发 · 技术创作者
 bio: 主攻 Java 全栈与 AI 应用落地，喜欢把好玩的想法做成能跑的开源工具。想和社区一起把 Agent、MCP 与内容工具的实践写清楚，让下一个 token 有处可去。
 # 选填：所在城市或时区，不填写可删除下一行
-location: UTC+8
+location: Shanghai
 # 最多 8 个，保持简短
 tags:
   - Java
